@@ -1,5 +1,5 @@
-//Previo3							Calles Cedeño Andros Gael
-//17 / 02 / 2026								320004647
+//Ppractica 3						Calles Cedeño Andros Gael
+//22 / 02 / 2026								320004647
 #include<iostream>
 
 //#define GLEW_STATIC
@@ -221,8 +221,8 @@ int main() {
 		glm::mat4 model = glm::mat4(1);
 		glm::mat4 view = glm::mat4(1);
 
-		//Previo3							Calles Cedeño Andros Gael
-		//17 / 02 / 2026								320004647
+		//Practica 03							Calles Cedeño Andros Gael
+		//22 / 02 / 2026								320004647
 
 		view = glm::translate(view, glm::vec3(-1.0f, -5.0f, -20.0f));
 		model = glm::translate(model, glm::vec3(0.0f,-1.0f, 1.0f));
@@ -241,49 +241,44 @@ int main() {
 
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
+		//Practica 03							Calles Cedeño Andros Gael
+		//22 / 02 / 2026								320004647
 		//Cubo 2
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 2.75f, 1.0f));
+		model = glm::translate(model, glm::vec3(2.0f, 2.75f, 1.0f));
 		model = glm::rotate(model, 0.5f, glm::vec3(0.0f, 5.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(3.5f,3.5f,3.5f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		//Cubo 3
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 6.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(-1.0f, 6.0f, 1.0f));
 		model = glm::rotate(model, 4.0f, glm::vec3(0.0f, -3.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(3.0f,3.0f,3.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		//Cubo 4
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 8.7f, 1.0f));
+		model = glm::translate(model, glm::vec3(1.0f, 8.25f, 1.0f));
 		model = glm::rotate(model, 3.0f, glm::vec3(0.0f, 9.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(2.5f, 2.5f, 2.5f));
+		model = glm::scale(model, glm::vec3(5.5f, 1.5f, 2.5f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		//Cubo 5
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 11.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 10.0f, 1.0f));
 		model = glm::rotate(model, 2.0f, glm::vec3(0.0f, -5.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		model = glm::scale(model, glm::vec3(4.0f, 2.0f, 4.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		//Cubo 6
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 12.8f, 1.0f));
-		model = glm::rotate(model, 0.5f, glm::vec3(0.0f, -10.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 12.5f, 1.0f));
+		model = glm::rotate(model, 0.5f, glm::vec3(0.0f, -10.0f, 5.0f));
 		model = glm::scale(model, glm::vec3(1.5f, 1.5f, 1.5f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
-
-
-
-		
-		
-		
-
 		// Swap the screen buffers
 		glfwSwapBuffers(window);
 	
