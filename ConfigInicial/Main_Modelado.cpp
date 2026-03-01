@@ -1,3 +1,8 @@
+
+
+//Practica 4						Calles Cedeño Andros Gael
+//27 / 02 / 2026								320004647		
+
 #include<iostream>
 
 //#define GLEW_STATIC
@@ -85,48 +90,53 @@ int main() {
 
 	// use with Perspective Projection
 	float vertices[] = {
+		//Practica 4						Calles Cedeño Andros Gael
+		//27 / 02 / 2026								320004647		
 		//Cubo 1
-		-0.5f, -0.5f, 0.5f, 0.8313f,0.2941f,0.1725f,//Front
+		//Frente
+		-0.5f, -0.5f, 0.5f, 0.8313f,0.2941f,0.1725f,
 		0.5f, -0.5f, 0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f, 0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f, 0.5f,  0.8313f,0.2941f,0.1725f,
 		-0.5f,  0.5f, 0.5f, 0.8313f,0.2941f,0.1725f,
 		-0.5f, -0.5f, 0.5f, 0.8313f,0.2941f,0.1725f,
-
-		-0.5f, -0.5f,-0.5f, 0.8313f,0.2941f,0.1725f,//Back
+		//Atras
+		-0.5f, -0.5f,-0.5f, 0.8313f,0.2941f,0.1725f,
 		0.5f, -0.5f,-0.5f, 0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f,-0.5f, 0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f,-0.5f, 0.8313f,0.2941f,0.1725f,
 		-0.5f,  0.5f,-0.5f, 0.8313f,0.2941f,0.1725f,
 		-0.5f, -0.5f,-0.5f, 0.8313f,0.2941f,0.1725f,
-
+		//Derecha
 		0.5f, -0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f, -0.5f, -0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f, -0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f, -0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f,  -0.5f, 0.5f, 0.8313f,0.2941f,0.1725f,
-
+		//Izquierda
 		-0.5f,  0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
 		-0.5f,  0.5f, -0.5f,  0.8313f,0.2941f,0.1725f,
 		-0.5f, -0.5f, -0.5f,  0.8313f,0.2941f,0.1725f,
 		-0.5f, -0.5f, -0.5f,  0.8313f,0.2941f,0.1725f,
 		-0.5f, -0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
 		-0.5f,  0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
-
+		//Abajo
 		-0.5f, -0.5f, -0.5f, 0.8313f,0.2941f,0.1725f,
 		0.5f, -0.5f, -0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f, -0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f, -0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
 		-0.5f, -0.5f,  0.5f, 0.8313f,0.2941f,0.1725f,
 		-0.5f, -0.5f, -0.5f, 0.8313f,0.2941f,0.1725f,
-
+		//Arriba
 		-0.5f,  0.5f, -0.5f, 0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f, -0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
 		0.5f,  0.5f,  0.5f,  0.8313f,0.2941f,0.1725f,
 		-0.5f,  0.5f,  0.5f, 0.8313f,0.2941f,0.1725f,
 		-0.5f,  0.5f, -0.5f, 0.8313f,0.2941f,0.1725f,
+		
+		
 		//Cubo 2
 		-0.5f, -0.5f, 0.5f, 0.9215f,0.392f,0.2313f,//Front
 		0.5f, -0.5f, 0.5f,  0.9215f,0.392f,0.2313f,
@@ -172,7 +182,8 @@ int main() {
 		//Cubo 3
 		-0.5f, -0.5f, 0.5f, 0.4784f,0.1411f,0.0196f,//Front
 		0.5f, -0.5f, 0.5f,  0.4784f,0.1411f,0.0196f,
-		0.5f,  0.5f, 0.5f,  0.4784f,0.1411f,0.0196f,				0.5f,  0.5f, 0.5f,  0.4784f,0.1411f,0.0196f,
+		0.5f,  0.5f, 0.5f,  0.4784f,0.1411f,0.0196f,				
+		0.5f,  0.5f, 0.5f,  0.4784f,0.1411f,0.0196f,
 		-0.5f,  0.5f, 0.5f, 0.4784f,0.1411f,0.0196f,
 		-0.5f, -0.5f, 0.5f, 0.4784f,0.1411f,0.0196f,
 
@@ -1260,6 +1271,95 @@ int main() {
 		0.5f, 0.5f, 0.5f, 0.7647f,0.7176f,0.9215f,
 		-0.5f, 0.5f, 0.5f, 0.7647f,0.7176f,0.9215f,
 		-0.5f, 0.5f, -0.5f, 0.7647f,0.7176f,0.9215f,
+
+		//Cubo 29
+			-0.5f, -0.5f, 0.5f, 0.8784f, 0.6117f, 0.1686f,  //Front
+			0.5f, -0.5f, 0.5f, 0.9098f, 0.6980f, 0.2117f,
+			0.5f, 0.5f, 0.5f, 0.8470f, 0.4823f, 0.1294f,
+			0.5f, 0.5f, 0.5f, 0.8470f, 0.4823f, 0.1294f,
+			-0.5f, 0.5f, 0.5f, 0.9098f, 0.6980f, 0.2117f,
+			-0.5f, -0.5f, 0.5f, 0.8784f, 0.6117f, 0.1686f,
+
+			-0.5f, -0.5f, -0.5f, 0.8784f, 0.6117f, 0.1686f,//Back
+			0.5f, -0.5f, -0.5f, 0.9098f, 0.6980f, 0.2117f,
+			0.5f, 0.5f, -0.5f, 0.8470f, 0.4823f, 0.1294f,
+			0.5f, 0.5f, -0.5f, 0.8470f, 0.4823f, 0.1294f,
+			-0.5f, 0.5f, -0.5f, 0.9098f, 0.6980f, 0.2117f,
+			-0.5f, -0.5f, -0.5f, 0.8784f, 0.6117f, 0.1686f,
+
+			0.5f, -0.5f, 0.5f, 0.8784f, 0.6117f, 0.1686f,
+			0.5f, -0.5f, -0.5f, 0.9098f, 0.6980f, 0.2117f,
+			0.5f, 0.5f, -0.5f, 0.8470f, 0.4823f, 0.1294f,
+			0.5f, 0.5f, -0.5f, 0.8470f, 0.4823f, 0.1294f,
+			0.5f, 0.5f, 0.5f, 0.9098f, 0.6980f, 0.2117f,
+			0.5f, -0.5f, 0.5f, 0.8784f, 0.6117f, 0.1686f,
+
+			-0.5f, 0.5f, 0.5f, 0.8784f, 0.6117f, 0.1686f,
+			-0.5f, 0.5f, -0.5f, 0.9098f, 0.6980f, 0.2117f,
+			-0.5f, -0.5f, -0.5f, 0.8470f, 0.4823f, 0.1294f,
+			-0.5f, -0.5f, -0.5f, 0.8470f, 0.4823f, 0.1294f,
+			-0.5f, -0.5f, 0.5f, 0.9098f, 0.6980f, 0.2117f,
+			-0.5f, 0.5f, 0.5f, 0.8784f, 0.6117f, 0.1686f,
+
+			-0.5f, -0.5f, -0.5f, 0.8784f, 0.6117f, 0.1686f,
+			0.5f, -0.5f, -0.5f, 0.9098f, 0.6980f, 0.2117f,
+			0.5f, -0.5f, 0.5f, 0.8470f, 0.4823f, 0.1294f,
+			0.5f, -0.5f, 0.5f, 0.8470f, 0.4823f, 0.1294f,
+			-0.5f, -0.5f, 0.5f, 0.9098f, 0.6980f, 0.2117f,
+			-0.5f, -0.5f, -0.5f, 0.8784f, 0.6117f, 0.1686f,
+
+			-0.5f, 0.5f, -0.5f, 0.8784f, 0.6117f, 0.1686f,
+			0.5f, 0.5f, -0.5f, 0.9098f, 0.6980f, 0.2117f,
+			0.5f, 0.5f, 0.5f, 0.8470f, 0.4823f, 0.1294f,
+			0.5f, 0.5f, 0.5f, 0.8470f, 0.4823f, 0.1294f,
+			-0.5f, 0.5f, 0.5f, 0.9098f, 0.6980f, 0.2117f,
+			-0.5f, 0.5f, -0.5f, 0.8784f, 0.6117f, 0.1686f,
+			
+			//Practica 4						Calles Cedeño Andros Gael
+			//27 / 02 / 2026								320004647				
+			//Cubo 30
+			-0.5f, -0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,  //Front
+			0.5f, -0.5f, 0.5f, 0.9215f, 0.392f, 0.2313f,
+			0.5f, 0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, 0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+			-0.5f, 0.5f, 0.5f, 0.9215f, 0.392f, 0.2313f,
+			-0.5f, -0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+
+			-0.5f, -0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,//Back
+			0.5f, -0.5f, -0.5f, 0.9215f, 0.392f, 0.2313f,
+			0.5f, 0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, 0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+			-0.5f, 0.5f, -0.5f, 0.9215f, 0.392f, 0.2313f,
+			-0.5f, -0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+
+			0.5f, -0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, -0.5f, -0.5f, 0.9215f, 0.392f, 0.2313f,
+			0.5f, 0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, 0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, 0.5f, 0.5f, 0.9215f, 0.392f, 0.2313f,
+			0.5f, -0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+
+			-0.5f, 0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+			-0.5f, 0.5f, -0.5f, 0.9215f, 0.392f, 0.2313f,
+			-0.5f, -0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+			-0.5f, -0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+			-0.5f, -0.5f, 0.5f, 0.9215f, 0.392f, 0.2313f,
+			-0.5f, 0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+
+			-0.5f, -0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, -0.5f, -0.5f, 0.9215f, 0.392f, 0.2313f,
+			0.5f, -0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, -0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+			-0.5f, -0.5f, 0.5f, 0.9215f, 0.392f, 0.2313f,
+			-0.5f, -0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+
+			-0.5f, 0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, 0.5f, -0.5f, 0.9215f, 0.392f, 0.2313f,
+			0.5f, 0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+			0.5f, 0.5f, 0.5f, 0.4784f, 0.1411f, 0.0196f,
+			-0.5f, 0.5f, 0.5f, 0.9215f, 0.392f, 0.2313f,
+			-0.5f, 0.5f, -0.5f, 0.4784f, 0.1411f, 0.0196f,
+
 };
 
 
@@ -1321,6 +1421,8 @@ int main() {
 
 
 		//Le mandamos valores de nuestras variables esto para poder mover con las teclas nuestra "camara" 
+		//Practica 4						Calles Cedeño Andros Gael
+		//27 / 02 / 2026								320004647		
 		view = glm::translate(view, glm::vec3(movX, movY, movZ));
 		view = glm::rotate(view, glm::radians(rot), glm::vec3(0.0f, 0.1f, 0.0f));
 		view = glm::rotate(view, glm::radians(rotX), glm::vec3(0.1f, 0.0f, 0.0f));
@@ -1337,8 +1439,8 @@ int main() {
 
 
 		glBindVertexArray(VAO);
-		//Previo 4						Calles Cedeño Andros Gael
-		//25 / 02 / 2026								320004647
+		//Practica 4						Calles Cedeño Andros Gael
+		//27 / 02 / 2026								320004647
 		//Cabello1
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, 3.0f, 0.0f)); //0,3,0
@@ -1387,6 +1489,8 @@ int main() {
 		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//Practica 4						Calles Cedeño Andros Gael
+		//27 / 02 / 2026								320004647
 		//Cabello3
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-4.0f, 1.0f, -1.0f));
@@ -1423,6 +1527,12 @@ int main() {
 		model = glm::scale(model, glm::vec3(5.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 864, 36);
+		
+		
+		
+		
+		
+		
 		//Cabello4
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-2.0f, 0.0f, 3.5f));
@@ -1449,88 +1559,884 @@ int main() {
 		glDrawArrays(GL_TRIANGLES, 756, 36);
 		//Cabello4
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-5.0f, 0.0f, -0.5f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		model = glm::translate(model, glm::vec3(-5.0f, 0.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 720, 36);
 		//Cabello4
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(5.0f, 0.0f, -0.5f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		model = glm::translate(model, glm::vec3(5.0f, 0.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 720, 36);
+		//Cabello4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1.5f, 0.0f, 4.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//Cabello4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1.5f, 0.0f, 4.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//Cabello4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1.5f, 0.0f, 5.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//Cabello4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1.5f, 0.0f, 5.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//Cabello5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -1.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 720, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647		
+		//Cabello5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -1.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 720, 36);
+		//Cabello5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.5f, -1.0f, 5.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//Cabello5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-2.5f, -1.0f, 5.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
 		//Cabello 5
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 2.5f));
 		model = glm::scale(model, glm::vec3(11.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 756, 36);
-		//Cabello5
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(1.5f, 0.0f, 4.5f));
-		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 1.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 900, 36);
-		//Cabello5
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-1.5f, 0.0f, 4.5f));
-		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 1.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 900, 36);
 
-		//Cabello5
+
+		//Practica 4						Calles Cedeño Andros Gael
+		//27 / 02 / 2026								320004647		
+		//CabelloAtras 4
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(1.5f, 0.0f, 5.5f));
-		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -5.5f));
+		model = glm::scale(model, glm::vec3(5.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//CabelloAtras 4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -4.5f));
+		model = glm::scale(model, glm::vec3(9.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//CabelloAtras 5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, -5.5f));
+		model = glm::scale(model, glm::vec3(9.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 792, 36);
+		//CabelloAtras 5-7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.0f, -3.5f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 6.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 900, 36);
-		//Cabello5
+		//CabelloAtras 5-7
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-1.5f, 0.0f, 5.5f));
-		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(-6.0f, -3.5f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 6.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 900, 36);
-		//Cabello6
+		//CabelloAtras 7
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(2.5f, -1.0f, 5.0f));
-		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 2.0f));
+		model = glm::translate(model, glm::vec3(0.0f, -4.0f, -6.5f));
+		model = glm::scale(model, glm::vec3(7.0f, 5.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 936, 36);
-		//Cabello6
+		glDrawArrays(GL_TRIANGLES, 756, 36);
+		//CabelloAtras 7
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-2.5f, -1.0f, 5.0f));
-		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 2.0f));
+		model = glm::translate(model, glm::vec3(0.0f, -4.0f, -5.5f));
+		model = glm::scale(model, glm::vec3(9.0f, 5.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 936, 36);
-		//ColetasDelante7
+		glDrawArrays(GL_TRIANGLES, 720, 36);
+		//CabelloAtras 5-7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.0f, -5.5f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//CabelloAtras 5-7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.0f, -5.5f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//CabelloAtras 9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -5.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//CabelloAtras 9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -5.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//CabelloAtras 9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -5.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//CabelloAtras 9-10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -6.5f, -1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 756, 36);
+		//CabelloAtras 9-10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -6.5f, -1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 756, 36);
+		//CabelloAtras 12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, -7.0f, -5.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//CabelloAtras 12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, -7.0f, -5.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//CabelloAtras 12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -7.0f, -5.0f));
+		model = glm::scale(model, glm::vec3(7.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 792, 36);
+
+
+
+
+		//Practica 4						Calles Cedeño Andros Gael
+		//27 / 02 / 2026								320004647		
+
+		//PeloDelante5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, -1.0f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, -1.0f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante6
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-4.0f, -2.0f, 4.5f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 864, 36);
-		//ColetasDelante7
+		//PeloDelante6
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(4.0f, -2.0f, 4.5f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 864, 36);
-		//ColetasDelante8
+		//PeloDelante6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -2.0f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -2.0f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.0f, -2.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//PeloDelante7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.0f, -2.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+
+		//PeloDelante7
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-4.0f, -3.0f, 4.5f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 828, 36);
-		//ColetasDelante8
+		//PeloDelante7
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(4.0f, -3.0f, 4.5f));
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//PeloDelante7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -3.0f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -3.0f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante6-7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -2.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//PeloDelante6-7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -2.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//PeloDelante7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.0f, -3.0f, 2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 720, 36);
+		//PeloDelante7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.0f, -3.0f, 2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 720, 36);
+		//PeloDelante12-13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -8.5f, 2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//PeloDelante12-13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -8.5f, 2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//PeloDelante13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, -8.0f, 1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//PeloDelante13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, -8.0f, 1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//PeloDelante13-14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, -9.5f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante13-14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, -9.5f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(3.0f, -9.0f, 2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-3.0f, -9.0f, 2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//PeloDelante14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(3.0f, -10.0f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//PeloDelante14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-3.0f, -10.0f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647		
+		//PeloDelante15-16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(3.0f, -11.5f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//PeloDelante15-16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-3.0f, -11.5f, 3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//PeloDelante8
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -4.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
 
+		//PeloDelante8
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -4.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
 
 
 		
+		//Practica 4						Calles Cedeño Andros Gael
+		//27 / 02 / 2026								320004647		
+		//ColetasTraseras1-2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, 2.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras1-2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, 2.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras1
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.5f, 3.0f, -1.5f)); 
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras1
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.5f, 3.0f, -1.5f)); 
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-7.0f, 2.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(7.0f, 2.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras2-3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, 1.5f, -1.5f)); 
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras2-3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, 1.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras2-3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.0f, 1.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras2-3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.0f, 1.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.0f, 1.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//Practica 4						Calles Cedeño Andros Gael
+		//27 / 02 / 2026								320004647		
+		//ColetasTraseras3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.0f, 1.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras3-5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-7.0f, 0.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 3.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras3-5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(7.0f, 0.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 3.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
 		
+		
+		
+		
+		//ColetasTraseras4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.0f, 0.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.0f, 0.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-9.0f, 0.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras4
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(9.0f, 0.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras4-5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.0f, -0.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras4-5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.0f, -0.5f, -1.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.5f, -1.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.5f, -1.0f, -1.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-7.0f, -2.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(7.0f, -2.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.0f, -2.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, -2.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.5f, -2.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.5f, -2.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, -3.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+
+		//Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647		
+		//ColetasTraseras7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.0f, -3.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.5f, -3.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.5f, -3.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		
+		
+		
+		//ColetasTraseras8
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-11.0f, -4.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras8
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(11.0f, -4.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(11.0f, -5.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-11.0f, -5.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras8-9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.0f, -4.5f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras8-9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, -4.5f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras8-9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.5f, -4.5f, -3.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras8-9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.5f, -4.5f, -3.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(12.0f, -6.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-12.0f, -6.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, -6.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.0f, -6.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.0f, -6.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//ColetasTraseras10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.0f, -6.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+
+
+		//ColetasTraseras11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-12.0f, -7.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(12.0f, -7.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.5f, -7.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.5f, -7.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 972, 36);
+		//ColetasTraseras11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(9.0f, -7.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-9.0f, -7.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.0f, -7.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.0f, -7.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-12.0f, -8.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(12.0f, -8.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(9.0f, -8.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-9.0f, -8.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.5f, -8.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.5f, -8.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 936, 36);
+		//ColetasTraseras12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(8.0f, -8.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras12
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-8.0f, -8.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 9.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-12.0f, -9.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(12.0f, -9.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, -9.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.0f, -9.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//ColetasTraseras13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-7.5f, -9.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(7.5f, -9.0f, -2.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+
+
+
+
+		//ColetasTraseras14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.0f, -10.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, -10.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-7.5f, -10.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(7.5f, -10.0f, -2.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 900, 36);
+		//ColetasTraseras15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.0f, -11.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//ColetasTraseras15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, -11.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//ColetasTraseras15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-7.0f, -11.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//ColetasTraseras15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(7.0f, -11.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 864, 36);
+		//Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647		
+		//ColetasTraseras16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-9.5f, -12.0f, -0.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 756, 36);
+		//ColetasTraseras16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.5f, -12.0f, -0.5f));
+		model = glm::scale(model, glm::vec3(4.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//ColetasTraseras16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.5f, -12.0f, -0.5f));
+		model = glm::scale(model, glm::vec3(4.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 828, 36);
+		//ColetasTraseras16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(9.5f, -12.0f, -0.5f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 756, 36);
+
+
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
 		//Cara
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -6.5f, 2.5f));
@@ -1569,6 +2475,26 @@ int main() {
 		glDrawArrays(GL_TRIANGLES, 360, 36);
 		//Cara
 		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -7.0f, -0.5f));
+		model = glm::scale(model, glm::vec3(9.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 360, 36);
+		//Cara
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -5.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(9.0f, 3.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 360, 36);
+		//Cara
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -8.0f, -0.5f));
+		model = glm::scale(model, glm::vec3(7.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 360, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Cara
+		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 3.5f));
 		model = glm::scale(model, glm::vec3(7.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -1591,6 +2517,10 @@ int main() {
 		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 360, 36);
+
+		//Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		
 		//Mejillas
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-3.0f, -6.0f, 3.5f));
@@ -1675,6 +2605,8 @@ int main() {
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 684, 36);
+		//Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
 		//pestaña
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-5.0f, -5.0f, 2.5f));
@@ -1688,7 +2620,11 @@ int main() {
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 684, 36);
 		
-		
+
+
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//
 		//oreja1
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-6.0f, -4.5f, 1.5f));
@@ -1725,8 +2661,6 @@ int main() {
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 36, 36);
-
-
 		//oreja2
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(6.0f, -4.5f, 1.5f));
@@ -1751,6 +2685,8 @@ int main() {
 		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 252, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647
 		//arete2
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(8.0f, -4.0f, 0.5f));
@@ -1767,8 +2703,555 @@ int main() {
 
 
 
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Cuello13
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -9.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 180, 36);
+		//Cuello13-14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.0f, -9.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuello13-14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-2.0f, -9.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuello14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -10.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 324, 36);
+		//Cuello14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1.0f, -10.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+		//Cuello14
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1.0f, -10.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+		//Cuerpo14-15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(3.0f, -10.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 576, 36);
+		//Cuerpo14-15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-3.0f, -10.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 576, 36);
+		//Cuerpo15-16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.0f, -11.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+		//Cuerpo15-16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-2.0f, -11.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+		//Cuerpo15-16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -11.5f, -3.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+		//Cuerpo15-17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1.0f, -11.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 324, 36);
+		//Cuerpo15-17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1.0f, -11.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 324, 36);
+		//Cuerpo15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -11.0f, 0.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 612, 36);
+		//Cuerpo15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, -11.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 576, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Cuerpo15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, -11.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 576, 36);
+
+		//Cuerpo16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -12.0f, 0.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+		//Cuerpo16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(3.0f, -12.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-3.0f, -12.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+				//Cuerpo16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, -12.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo16
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, -12.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -13.0f, 0.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -13.0f, 0.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 5.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, -13.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, -13.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -13.0f, 0.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 7.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 612, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1.5f, -13.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 10.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 324, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1.5f, -13.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 10.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 324, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(3.0f, -13.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 288, 36);
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-3.0f, -13.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 288, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Cuerpo17
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -13.0f, -4.5f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 324, 36);
+
+
+		//Cuerpo17-18
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.5f, -14.5f, 2.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 360, 36);
+		//Cuerpo17-18
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.5f, -14.5f, 2.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 360, 36);
+		//Cuerpo18
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -14.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(7.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+		//Cuerpo18
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-4.0f, -14.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 180, 36);
+		//Cuerpo18
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(4.0f, -14.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 180, 36);
+		//Cuerpo18
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -14.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 180, 36);
+		//Cuerpo18
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -14.0f, -1.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 180, 36);
+		//Cuerpo19
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(3.0f, -15.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 468, 36);
+		//Cuerpo19
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-3.0f, -15.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 4.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 468, 36);
+		//Cuerpo19
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1.5f, -15.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 612, 36);
+		//Cuerpo19
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1.5f, -15.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 612, 36);
+		//Cuerpo19
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -15.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 684, 36);
+		//Cuerpo20
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -16.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(7.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo20
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -17.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(9.0f, 1.0f, 10.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+		//Cuerpo20
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -17.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo20
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -17.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo21
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -18.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo21
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -18.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 540, 36);
+		//Cuerpo21
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.0f, -18.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 576, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Cuerpo21
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.0f, -18.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 6.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 576, 36);
+		//Cuerpo21
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -18.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(9.0f, 1.0f, 10.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 648, 36);
+
+
+
+		//Cuerpo22
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -19.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(9.0f, 1.0f, 12.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 324, 36);
+		//Cuerpo22
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(5.0f, -19.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 10.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 288, 36);
+		//Cuerpo22
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-5.0f, -19.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 10.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 288, 36);
+		//Cuerpo22
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.0f, -19.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 180, 36);
+		//Cuerpo22
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.0f, -19.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 180, 36);
+		//Piernas23
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-2.0f, -20.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 504, 36);
+		//Piernas23
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.0f, -20.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 504, 36);
+		//Zapatos24-26
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-2.0f, -22.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 144, 36);
+		//Zapatos24-26
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.0f, -22.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 3.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 144, 36);
+		//Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Zapatos26
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-2.0f, -22.5f, 2.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 2.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 216, 36);
+		//Zapatos26
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.0f, -22.5f, 2.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 2.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 216, 36);
+
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Baculo 0
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, 5.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 1
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, 4.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, 2.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+
+		//Baculo 3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, 3.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Gema
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 3.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1044, 36);
+		//Gema
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1044, 36);
+		//Gema
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1044, 36);
+		//Baculo 3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(15.0f, 3.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(19.0f, 3.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 4-5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, 0.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		////Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Baculo 5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 5
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(15.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
 		
 		
+		//Baculo 6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(15.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		//Baculo 6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(19.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 6
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, -2.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, -3.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 15
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, -11.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 15.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		//Baculo 19-20
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, -19.5f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 2.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 21
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, -21.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(3.0f, 1.0f, 3.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+		//Baculo 22
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(17.0f, -22.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 1008, 36);
+
+		//Practica 4						Calles Cedeño Andros Gael
+		//01 / 03 / 2026								320004647	
+		//Lsiton 6-8
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, -3.0f, 2.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 3.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		//Lsiton 9
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, -5.0f, 3.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 36);
+		//Lsiton 10
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, -6.0f, 3.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 324, 36);
+		//Lsiton 11
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, -7.0f, 4.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 36, 36);
 		
 		
 		glBindVertexArray(0);
@@ -1784,8 +3267,9 @@ int main() {
 	glfwTerminate();
 	return EXIT_SUCCESS;
  }
- //Previo 4						Calles Cedeño Andros Gael
-		 //25 / 02 / 2026								320004647
+
+ //Practica 4						Calles Cedeño Andros Gael
+ //27 / 02 / 2026								320004647		
  void Inputs(GLFWwindow *window) {
 	 //cierra la ventana
 	 if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)  //GLFW_RELEASE
@@ -1808,23 +3292,23 @@ int main() {
 	 //mueve la camara en z positivo (adelante)
 	 if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 		 movZ += 0.08f;
-	 //gira la camara a la derecha 
+	 //gira la camara a la derecha en Y
 	 if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
 		 rot += 0.4f;
-	 //gira la camara a la izquierda 
+	 //gira la camara a la izquierda en Y
 	 if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
 		 rot -= 0.4f;
-	 //gira la camara a la derecha 
-	 if (glfwGetKey(window, GLFW_KEY_U) == GLFW_PRESS)
+	 //gira la camara a la derecha en X
+	 if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
 		 rotX += 0.4f;
-	 //gira la camara a la izquierda 
-	 if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
+	 //gira la camara a la izquierda en X 
+	 if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
 		 rotX -= 0.4f;
-	 //gira la camara a la derecha 
-	 if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
+	 //gira la camara a la derecha en Z
+	 if (glfwGetKey(window, GLFW_KEY_V) == GLFW_PRESS)
 		 rotZ += 0.4f;
-	 //gira la camara a la izquierda 
-	 if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
+	 //gira la camara a la izquierda en Z
+	 if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
 		 rotZ -= 0.4f;
  }
 
