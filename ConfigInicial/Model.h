@@ -141,7 +141,7 @@ private:
 				indices.push_back(face.mIndices[j]);
 			}
 		}
-
+		
 		// Process materials
 		if (mesh->mMaterialIndex >= 0)
 		{

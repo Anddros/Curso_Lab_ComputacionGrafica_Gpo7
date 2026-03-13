@@ -22,7 +22,7 @@
 #include "stb_image.h"
 
 // Properties
-const GLuint WIDTH = 800, HEIGHT = 600;
+const GLuint WIDTH = 1000, HEIGHT = 800;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Function prototypes
@@ -103,10 +103,10 @@ int main( )
     //el nombre de la textura
   
     
-    //Previo 6						Calles Cedeño Andros Gael
-    //10 / 03 / 2026								320004647
-    Model niko((char*)"Models/Niko.obj");
-    glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 100.0f );
+    //Practica 6						Calles Cedeño Andros Gael
+    //15 / 03 / 2026								320004647
+    Model CocinaPerro((char*)"Models/CocinaPerro.obj");
+    glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 1500.0f );
     
   
 
@@ -132,19 +132,15 @@ int main( )
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 
-        //Previo 6						Calles Cedeño Andros Gael
-         //10 / 03 / 2026								320004647
+        //Practica 6						Calles Cedeño Andros Gael
+        //15 / 03 / 2026								320004647
         // Draw the loaded model
         glm::mat4 model(1);
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         //Una vez inicializada la matriz de modelo unitaria utilizamos la variable que usamos
-        niko.Draw(shader);
+        CocinaPerro.Draw(shader);
 
-        model = glm::translate(model, glm::vec3(-10.0f, 0.0f, 0.0f));
-        model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
-        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        niko.Draw(shader);
-     
+        
 
         // Swap the buffers
         glfwSwapBuffers( window );
@@ -176,7 +172,7 @@ void DoMovement( )
     
     if ( keys[GLFW_KEY_D] || keys[GLFW_KEY_RIGHT] )
     {
-        camera.ProcessKeyboard( RIGHT, deltaTime );
+        camera.ProcessKeyboard(RIGHT, deltaTime);
     }
 
    
