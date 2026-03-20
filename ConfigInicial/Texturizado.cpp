@@ -1,5 +1,5 @@
-//Previo 7						Calles Cedeño Andros Gael
-//17 / 03 / 2026								320004647
+//Practica 7					Calles Cedeño Andros Gael
+//22 / 03 / 2026								320004647
 #include <iostream>
 #include <cmath>
 
@@ -58,8 +58,8 @@ int main()
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
 	// Create a GLFWwindow object that we can use for GLFW's functions
-	//Previo 7						Calles Cedeño Andros Gael
-	//17 / 03 / 2026								320004647
+	//Practica 7						Calles Cedeño Andros Gael
+	//21 / 03 / 2026								320004647
 	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Texturizado_ Calles Cedeño Andros Gael", nullptr, nullptr);
 
 	if (nullptr == window)
@@ -103,22 +103,54 @@ int main()
 	// Set up vertex data (and buffer(s)) and attribute pointers
 	GLfloat vertices[] =
 	{
-		//Previo 7						Calles Cedeño Andros Gael
-		//17 / 03 / 2026								320004647
-		// Positions            // Colors              // Texture Coords
-		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,0.0f, //esq inf izq
-		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		2.0f,0.0f,//esq inf derecha
-		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    2.0f,2.0f,//esq sup derecha
-		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,2.0f,//esq sup izq
+		//Practica 7						Calles Cedeño Andros Gael
+		//22 / 03 / 2026								320004647
+		// Posicion            // Colores            // Coordenadas de la Textura (U,V)
+//Dado Caras
+// Frente (Cara Delante Dado)
+		-0.5f, -0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.7500f, 0.3333f, // esq inf izq (izq abajo)
+		 0.5f, -0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    1.0f, 0.3333f, // esq inf derecha (derecha abajo)
+		 0.5f,  0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    1.0f, 0.6666f, // esq sup derecha (derecha arriba)
+		-0.5f,  0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.7500f, 0.6666f, // esq sup izq (iz arriba)
 
-		
+		// Atras (Cara Atrás Dado)
+		-0.5f, -0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.25f, 0.3333f,	// esq inf izq (izq abajo)
+		 0.5f, -0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.5f, 0.3333f,	// esq inf derecha (derecha abajo)
+		 0.5f,  0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.5f, 0.6666f,	// esq sup derecha (derecha arriba)
+		-0.5f,  0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.25f, 0.6666f,	// esq sup izq (iz arriba)
+
+		// Derecha (Cara Der Dado)
+		 0.5f, -0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.5f, 0.6666f,	// esq inf izq (izq abajo)
+		 0.5f, -0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.75f, 0.6666f,	// esq inf derecha (derecha abajo)
+		 0.5f,  0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.75f, 1.0f,		// esq sup derecha (derecha arriba)
+		 0.5f,  0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.5f, 1.0f,		// esq sup izq (iz arriba)
+
+		// Izquierda (Cara Izq Dado)
+		-0.5f,  0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.5f, 0.3333f, // esq sup izq (iz arriba)
+		-0.5f,  0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.75f, 0.3333f, // esq sup derecha (derecha arriba)
+		-0.5f, -0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.75f, 0.0000f, // esq inf derecha (derecha abajo)
+		-0.5f, -0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.5f, 0.0000f, // esq inf izq (izq abajo)
+
+		// Abajo (Cara Abajo Dado)
+		-0.5f, -0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.0000f, 0.3333f, // esq inf izq (izq abajo)
+		 0.5f, -0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.25f, 0.3333f, // esq inf derecha (derecha abajo)
+		 0.5f, -0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.25f, 0.6666f, // esq sup derecha (derecha arriba)
+		-0.5f, -0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.0000f, 0.6666f, // esq sup izq (iz arriba)
+
+		// Arriba (Cara Arriba Dado)
+		-0.5f,  0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.5f, 0.3333f, // esq inf izq (izq abajo)
+		 0.5f,  0.5f, -0.5f,     1.0f, 1.0f, 1.0f,    0.75f, 0.3333f, // esq inf derecha (derecha abajo)
+		 0.5f,  0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.75f, 0.6666f, // esq sup derecha (derecha arriba)
+		-0.5f,  0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    0.5f, 0.6666f, // esq sup izq (iz arriba)
 	};
 
-	GLuint indices[] =
-	{  // Note that we start from 0!
-		0,1,3,
-		1,2,3
-	
+	GLuint indices[] = {
+		0, 1, 2,     2, 3, 0,   // Frente
+		4, 5, 6,     6, 7, 4,   // Atrás
+		8, 9, 10,    10, 11, 8, // Derecha
+		12, 13, 14,  14, 15, 12, // Izquierda
+		16, 17, 18,  18, 19, 16, // Abajo
+		20, 21, 22,  22, 23, 20  // Arriba
 	};
 
 	// First, set the container's VAO (and VBO)
@@ -163,9 +195,9 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
 	// Diffuse map
 	//La ruta de donde se encuentra la textura (ubicacion,tamaño,tamaño,numero de canales a utilizar)
-	//Previo 7						Calles Cedeño Andros Gael
-	//17 / 03 / 2026								320004647
-	image = stbi_load("images/MinecraftTransparentGlass.png", &textureWidth, &textureHeight, &nrChannels,0);
+	//Practica 7						Calles Cedeño Andros Gael
+	//22 / 03 / 2026								320004647
+	image = stbi_load("images/Dado.png", &textureWidth, &textureHeight, &nrChannels,0);
 	//Lo enlzamos con el tipo de textura y el identificador
 	glBindTexture(GL_TEXTURE_2D, texture1);
 	//Usamos la informacion de arriba para ahora si convertirlo en una textura 2D (info,indicamos que es textura,modelo de color, parametros ancho,altura,
@@ -214,8 +246,8 @@ int main()
 		GLint modelLoc = glGetUniformLocation(lampShader.Program, "model");
 		GLint viewLoc = glGetUniformLocation(lampShader.Program, "view");
 		GLint projLoc = glGetUniformLocation(lampShader.Program, "projection");
-		//Previo 7						Calles Cedeño Andros Gael
-		//17 / 03 / 2026								320004647
+		//Practica 7						Calles Cedeño Andros Gael
+		//22 / 03 / 2026								320004647
 		// Bind diffuse map
 		//Activamos el uso de la textura de indice 0
 		glActiveTexture(GL_TEXTURE0);
@@ -229,7 +261,7 @@ int main()
 		// Draw the light object (using light's vertex attributes)
 		glBindVertexArray(VAO);
 		//Dibujamos nuestros elementos 
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 36 , GL_UNSIGNED_INT, 0);
 
 
 		glBindVertexArray(0);
