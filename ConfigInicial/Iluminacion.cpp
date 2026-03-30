@@ -25,7 +25,7 @@
 #include "SOIL2/SOIL2.h"
 #include "stb_image.h"
 // Properties
-const GLuint WIDTH = 800, HEIGHT = 600;
+const GLuint WIDTH = 900, HEIGHT = 700;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Function prototypes
@@ -44,6 +44,12 @@ bool firstMouse = true;
 // Light attributes
 glm::vec3 lightPos(0.5f, 0.5f, 2.5f);
 glm::vec3 lightPos2(-0.0f, 30.0f, -50.0f);
+// Ajusta el angulo en el que se encontrara ya sea el sol/luna 
+float orbitAngle = 0.0f;
+// Ajusta la velocidad del ciclo
+float orbitSpeed = 0.25f;
+// Qué tan lejos giran del centro
+float orbitRadius =50.0f; 
 float movelightPos = 0.0f;
 GLfloat deltaTime = 0.0f;
 GLfloat lastFrame = 0.0f;
@@ -107,7 +113,9 @@ int main()
 
     // Load models
     Model cocina_perro((char*)"Models/CocinaPerro.obj");
-    glm::mat4 projection = glm::perspective(camera.GetZoom(), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
+    Model solModel((char*)"Models/Sol.obj");
+    Model lunaModel((char*)"Models/Luna.obj");
+    glm::mat4 projection = glm::perspective(camera.GetZoom(), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 200.0f);
 
     float vertices[] = {
         //Coordenadas de los vertices(x,y,z) Direccion del Vectro Normal
@@ -199,10 +207,19 @@ int main()
     // Game loop
     while (!glfwWindowShouldClose(window))
     {
-        // Set frame time
+        // Incrementar el ángulo basado en el tiempo
         GLfloat currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
+        // Luz 1 (Sol): Órbita en el plano YZ (Frente a Atrás)
+        lightPos.x = 0.0f; // Centrado respecto al modelo
+        lightPos.y = sin(orbitAngle) * orbitRadius; // Altura
+        lightPos.z = cos(orbitAngle) * orbitRadius; // Profundidad
+
+        // Luz 2 (Luna): 180 grados desfasada
+        lightPos2.x = 0.0f;
+        lightPos2.y = sin(orbitAngle + glm::radians(180.0f)) * orbitRadius;
+        lightPos2.z = cos(orbitAngle + glm::radians(180.0f)) * orbitRadius;
 
         // Check and call events
         glfwPollEvents();
@@ -219,76 +236,76 @@ int main()
         glUniform3f(lightPosLoc, lightPos.x + movelightPos, lightPos.y + movelightPos, lightPos.z + movelightPos);
         glUniform3f(viewPosLoc, camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
 
-        //Previo 8 							Calles Cedeño Andros Gael
-        //24 / 03 / 2026									320004647
-
-
-        // Set lights properties
-        //Para nuestra luz ambiental
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"), 0.2f, 0.0f, 0.2f);
-        //Para nuestra luz difusa
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse"), 0.8f, 0.0f, 0.8f);
-        //Para nuestra luz especular
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular"), 1.0f, 0.0f, 1.0f);
-
+        //Practica 8 							Calles Cedeño Andros Gael
+        //29 / 03 / 2026									320004647
         glm::mat4 view = camera.GetViewMatrix();
         glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-        //Previo 8 							Calles Cedeño Andros Gael
-      //24 / 03 / 2026									320004647
+
+        
+        //Luz Sol
+
+        // Set Light Properties
+        float IntensidadSol = (lightPos.y > 0) ? 1.0f : 0.0f;
+        //Para nuestra luz ambiental 
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.ambient"), 0.16f * IntensidadSol, 0.16f * IntensidadSol, 0.0f * IntensidadSol);
+        // Para nuestra luz difusa 
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.diffuse"), 0.6f * IntensidadSol, 0.6f * IntensidadSol, 0.0f * IntensidadSol);
+        //Para nuestra luz especular 
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.specular"), 0.75f * IntensidadSol, 0.75f * IntensidadSol, 0.5f * IntensidadSol);
+        //Para calcular la posicion de la luz cuando se mueva el sol
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light.position"), lightPos.x, lightPos.y, lightPos.z);
+
+
+        //Practica 8 							Calles Cedeño Andros Gael
+        //29 / 03 / 2026									320004647
 
         // Set material properties
-        //Mandamos al shader las propiedades del material madando un uniform de 3 elementos de tipo flotante
-        //Pero mandamos el nombre del material ahora 
         //Para nuestra luz ambiental
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "material.ambient"), 0.2f, 0.4f, 0.9f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "material.ambient"), 1.0f, 1.0f, 1.0f);
         //Para nuestra luz difusa
         glUniform3f(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 1.0f, 1.0f, 1.0f);
         //Para nuestra luz especular
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "material.specular"), 0.2f, 0.7f, 0.7f);
-        //Agreamos uno para el brillo de un solo 1 elemento
-        glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 0.5f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "material.specular"), 1.0f, 1.0f, 1.0f);
+        //El brillo de nuestro objeto
+        glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 1.0f);
 
 
-        //Luz 2
-
-                // Set lights properties
-        //Para nuestra luz ambiental
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light2.ambient"), 0.2f, 0.2f, 0.0f);
-        //Para nuestra luz difusa
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light2.diffuse"), 1.0f, 1.0f, 0.0f);
+        //Luz Luna
+     
+        // Set lights properties
+        float IntensidadLuna = (lightPos2.y > 0) ? 1.0f : 0.0f;
+        //Para nuestra luz ambiental 
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light2.ambient"), 0.05f * IntensidadLuna, 0.05f * IntensidadLuna, 0.0f * IntensidadLuna);
+        // Para nuestra luz difusa 
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light2.diffuse"), 0.2f * IntensidadLuna, 0.4f * IntensidadLuna, 0.8f * IntensidadLuna);
         //Para nuestra luz especular
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "light2.specular"), 1.0f, 1.0f, 0.0f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light2.specular"), 0.4f * IntensidadLuna, 0.6f * IntensidadLuna, 1.0f * IntensidadLuna);
+        //Para calcular la posicion de la luz cuando se mueva la luna
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "light2.position"), lightPos2.x, lightPos2.y, lightPos2.z);
+        
+        //Practica 8 							Calles Cedeño Andros Gael
+        //29 / 03 / 2026									320004647
 
-
-        //Previo 8 							Calles Cedeño Andros Gael
-      //24 / 03 / 2026									320004647
-
-        // Set material properties
-        //Mandamos al shader las propiedades del material madando un uniform de 3 elementos de tipo flotante
-        //Pero mandamos el nombre del material ahora 
+        // Set material properties 
         //Para nuestra luz ambiental
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "material2.ambient"), 0.8f, 0.9f, 0.6f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "material2.ambient"), 0.1, 0.1, 0.1f);
         //Para nuestra luz difusa
         glUniform3f(glGetUniformLocation(lightingShader.Program, "material2.diffuse"), 1.0f, 1.0f, 1.0f);
         //Para nuestra luz especular
-        glUniform3f(glGetUniformLocation(lightingShader.Program, "material2.specular"), 0.8f, 0.7f, 0.8f);
+        glUniform3f(glGetUniformLocation(lightingShader.Program, "material2.specular"), 0.2f, 0.2f, 0.2f);
         //Agreamos uno para el brillo de un solo 1 elemento
-        glUniform1f(glGetUniformLocation(lightingShader.Program, "material2.shininess"), 0.2f);
+        glUniform1f(glGetUniformLocation(lightingShader.Program, "material2.shininess"), 10.0f);
 
 
 
-
-
-
-
-
-
-        //Previo 8 							Calles Cedeño Andros Gael
-        //24 / 03 / 2026									320004647
+        //Practica 8 							Calles Cedeño Andros Gael
+        //29 / 03 / 2026									320004647
+  
         // Draw the loaded model
         glm::mat4 model(1);
-        model = glm::scale(model, glm::vec3(0.25f, 0.25f, 0.25f));
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 10.0f));
+        model = glm::scale(model, glm::vec3(0.125f, 0.125f, 0.125f));
         glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         glBindVertexArray(VAO);
         cocina_perro.Draw(lightingShader);
@@ -297,35 +314,39 @@ int main()
 
         glBindVertexArray(0);
 
-
-        //Dibujo cubo 1 
-
+        // Activamos el shader de las lámparas
         lampshader.Use();
+
+        // Pasamos las matrices de Proyección y Vista al Shader de la lámpara
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, lightPos + movelightPos);
-        model = glm::scale(model, glm::vec3(2.0f));
-        glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        //Previo 8 							Calles Cedeño Andros Gael
-        //24 / 03 / 2026									320004647
-        //Dibujo cubo 2 
-        model = glm::mat4(1.0f); 
-        model = glm::translate(model, lightPos2); 
-        model = glm::scale(model, glm::vec3(2.0f));
-        glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        glDrawArrays(GL_TRIANGLES, 0, 36); 
+
+        //Dibujo del Sol
+        if (IntensidadSol > 0) {
+            glm::mat4 modeloSol = glm::mat4(1.0f); // Resetear matriz
+            modeloSol = glm::translate(modeloSol, lightPos); // Mover a la posición de órbita
+            modeloSol = glm::scale(modeloSol, glm::vec3(4.0f, 4.0f, 4.0f)); 
+
+            glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modeloSol));
+            solModel.Draw(lampshader); 
+        }
+
+        //Dibujo de la Luna
+        if (IntensidadLuna > 0) {
+            glm::mat4 modeloLuna = glm::mat4(1.0f); // Resetear matriz
+            modeloLuna = glm::translate(modeloLuna, lightPos2);// Mover a la posición de órbita
+            modeloLuna = glm::scale(modeloLuna, glm::vec3(4.0f, 4.0f, 4.0f));
+
+            glUniformMatrix4fv(glGetUniformLocation(lampshader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modeloLuna));
+            lunaModel.Draw(lampshader); 
+        }
         glBindVertexArray(0);
 
-        // Swap the buffers
         glfwSwapBuffers(window);
     }
 
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
-
     glfwTerminate();
     return 0;
 }
@@ -353,6 +374,14 @@ void DoMovement()
     if (keys[GLFW_KEY_D] || keys[GLFW_KEY_RIGHT])
     {
         camera.ProcessKeyboard(RIGHT, deltaTime);
+    }
+    if (keys[GLFW_KEY_O])
+    {
+        orbitAngle += orbitSpeed * deltaTime; // Gira en un sentido
+    }
+    if (keys[GLFW_KEY_L])
+    {
+        orbitAngle -= orbitSpeed * deltaTime; // Gira en sentido contrario
     }
 
     if (activanim)

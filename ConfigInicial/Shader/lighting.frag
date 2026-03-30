@@ -65,8 +65,10 @@ void main()
     vec3 specular2 = light2.specular * (spec2 * material2.specular);
     
 
-    // Sumamos la aportación de la luz 1 y la luz 2
-    vec3 result = (ambient1 + diffuse1 + specular1) + (ambient2 + diffuse2 + specular2);
-    
-    color = vec4(result, 1.0f) * texture(texture_diffusse, TexCoords);
+vec3 res1 = (ambient1 + diffuse1) * vec3(texture(texture_diffusse, TexCoords)) + specular1;
+vec3 res2 = (ambient2 + diffuse2) * vec3(texture(texture_diffusse, TexCoords)) + specular2;
+
+// Suma final
+vec3 result = res1 + res2;
+color = vec4(result, 1.0f);
 }
