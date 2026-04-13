@@ -1,4 +1,4 @@
-# Blender 4.2.18 LTS MTL File: 'Practica6Grafica.blend'
+# Blender 4.2.19 LTS MTL File: 'Practica6Grafica.blend'
 # www.blender.org
 
 newmtl Material.016
@@ -28,8 +28,8 @@ Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd Niko.png
-map_d Niko.png
+map_Kd ../../../../../Downloads/source/Niko.png
+map_d ../../../../../Downloads/source/Niko.png
 
 newmtl UV_01
 Ns 360.000000
@@ -140,6 +140,16 @@ Ni 1.500000
 d 1.000000
 illum 1
 map_Kd pinturacobardes.png
+
+newmtl lamp
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd lamp_2D_View.png
 
 newmtl shadingMap4SG
 Ns 0.000000
