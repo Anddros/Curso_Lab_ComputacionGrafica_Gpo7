@@ -1,7 +1,6 @@
 #version 330 core
 
-#define NUMBER_OF_POINT_LIGHTS 4
-#define NUMBER_OF_SPOT_LIGHTS 3
+#define NUMBER_OF_POINT_LIGHTS 1
 
 struct Material
 {
@@ -57,7 +56,7 @@ out vec4 color;
 uniform vec3 viewPos;
 uniform DirLight dirLight;
 uniform PointLight pointLights[NUMBER_OF_POINT_LIGHTS];
-uniform SpotLight spotLights[NUMBER_OF_SPOT_LIGHTS];
+uniform SpotLight spotLight;
 uniform Material material;
 uniform int transparency;
 
@@ -82,32 +81,12 @@ void main( )
     }
     
     // Spot light
-    for ( int i = 0; i < NUMBER_OF_SPOT_LIGHTS; i++ )
-    {
-        result += CalcSpotLight( spotLights[i], norm, FragPos, viewDir );
-    }
+    result += CalcSpotLight( spotLight, norm, FragPos, viewDir );
+ 	
+    color = vec4( result,texture(material.diffuse, TexCoords).rgb );
+	  if(color.a < 0.1 && transparency==1)
+        discard;
 
-    // Logica de Transparencia
-    vec4 texColor = texture(material.diffuse, TexCoords);
-    
-    if(transparency == 1) 
-    {
-        // Le ponemos un tinte de color azul al cristal
-        vec3 colorCristal = result + vec3(0.05, 0.2, 0.3); 
-        
-        //Opacidad del cristal de las ventanas
-        color = vec4(colorCristal, 0.4); 
-    } 
-    else 
-    {
-        // Comportamiento normal para la cocina (objetos opacos)
-        color = vec4(result, texColor.a);
-        
-        //El discard original solo es para objetos opacos que tengan
-        // texturas con recortes (como rejas, hojas de plantas, etc.)
-        if(color.a < 0.1)
-            discard; 
-    }
 }
 
 // Calculates the color when using a directional light.
