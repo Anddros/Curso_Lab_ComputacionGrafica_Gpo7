@@ -112,6 +112,7 @@ float tail = 0.0f;
 glm::vec3 dogPos (0.0f,0.0f,0.0f);
 float dogRot = 0.0f;
 bool step = false;
+bool animacionActiva = false;
 
 
 
@@ -507,10 +508,11 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 	if (keys[GLFW_KEY_Z])
 	{
 		dogAnim = 1;
+		animacionActiva = true;
 	}
 	if (keys[GLFW_KEY_X])
 	{
-		dogAnim = 0;
+		animacionActiva = false;
 	}
 	if (keys[GLFW_KEY_C])
 	{
@@ -526,10 +528,10 @@ void Animation() {
 	//Previo 11 							Calles Cedeño Andros Gael
 	//21 / 04 / 2026									320004647
 	// Posicion IDLE
-	if (dogAnim == 0) {
-
+	if (!animacionActiva) {
+		return;
 	}
-	//Animacion de caminata
+	//Animacion de caminata hacia delante
 	if (dogAnim==1) { 
 		//Para cuando las patas vayan adelante, estado 1
 		if (!step) {
@@ -553,11 +555,163 @@ void Animation() {
 		dogPos.z += 0.01;
 		printf("%f",dogPos.z);
 	}
-	
+	//Practica 11 							Calles Cedeño Andros Gael
+	//26 / 04 / 2026									320004647
+	//Llega al borde y se da la vuelta y camina
+	if (dogAnim == 2) {
+		//Para cuando las patas vayan adelante, estado 1
+		if (!step) {
+			RLegs += 0.4f;
+			FLegs += 0.4f;
+			head += 0.4f;
+			tail += 0.4f;
+
+			if (RLegs > 30.0f)
+				step = true;
+		}
+		else if (step) {
+			RLegs -= 0.4f;
+			FLegs -= 0.4f;
+			head -= 0.4f;
+			tail -= 0.4f;
+
+			if (RLegs < -30.0f)
+				step = false;
+		}
+		dogRot = 90.0f;
+		dogPos.x += 0.01;
+		printf("%f", dogPos.x);
+	}
+	//Llega a una esquina y da la vuelta y camina
+	if (dogAnim == 3) {
+		//Para cuando las patas vayan adelante, estado 1
+		if (!step) {
+			RLegs += 0.4f;
+			FLegs += 0.4f;
+			head += 0.4f;
+			tail += 0.4f;
+
+			if (RLegs > 30.0f)
+				step = true;
+		}
+		else if (step) {
+			RLegs -= 0.4f;
+			FLegs -= 0.4f;
+			head -= 0.4f;
+			tail -= 0.4f;
+
+			if (RLegs < -30.0f)
+				step = false;
+		}
+		dogRot = 180.0f;
+		dogPos.z -= 0.01;
+		printf("%f", dogPos.x);
+	}
+	// Llega a la esquina opuesta de AnimDog2 da la vuelta y camina 
+	if (dogAnim == 4) {
+		//Para cuando las patas vayan adelante, estado 1
+		if (!step) {
+			RLegs += 0.4f;
+			FLegs += 0.4f;
+			head += 0.4f;
+			tail += 0.4f;
+
+			if (RLegs > 30.0f)
+				step = true;
+		}
+		else if (step) {
+			RLegs -= 0.4f;
+			FLegs -= 0.4f;
+			head -= 0.4f;
+			tail -= 0.4f;
+
+			if (RLegs < -30.0f)
+				step = false;
+		}
+		dogRot = 270.0f;
+		dogPos.x -= 0.01;
+		printf("%f", dogPos.x);
+	}
+	//Llega a la esquina equina opuesta a AnimDog4 solo gira 45 grados
+	//camina al origen y vuelve a ejecutar AnimDog1
+	if (dogAnim == 5) {
+		//Para cuando las patas vayan adelante, estado 1
+		if (!step) {
+			RLegs += 0.4f;
+			FLegs += 0.4f;
+			head += 0.4f;
+			tail += 0.4f;
+
+			if (RLegs > 30.0f)
+				step = true;
+		}
+		else if (step) {
+			RLegs -= 0.4f;
+			FLegs -= 0.4f;
+			head -= 0.4f;
+			tail -= 0.4f;
+
+			if (RLegs < -30.0f)
+				step = false;
+		}
+
+		dogRot = 405.0f;
+		dogPos.x += 0.01;
+		dogPos.z += 0.01;
+		printf("%f", dogPos.x);
+
+		//Se detiene en el origen (0,0) y reactiva el dogAnim1
+		if (dogPos.x >= 0.0f && dogPos.z >= 0.0f) {
+			dogPos.x = 0.0f; // Aseguramos que quede exactamente en 0
+			dogPos.z = 0.0f;
+			dogAnim = 1;
+			dogRot = 0.0f;
+		}
+	}
 	//Para cuando se acerque al final de la plataforma
+		//Practica 11 							Calles Cedeño Andros Gael
+	//26 / 04 / 2026									320004647
+	//dogAnim1
 	if (dogPos.z >= 4.77f) {
 		dogAnim = 0;
+		dogRot += 0.6;
 	}
+	//termina dogAnim1 y ejecuta dogAnim2
+	if (dogRot >= 90.0f) {
+		dogAnim = 2;
+	}
+	//cuando llega a la esquina se para 
+	if (dogPos.x >= 4.69f) {
+		dogAnim = 0;
+		dogRot += 0.6;
+	}
+	//una vez que gira 180° ejecuta dogAnim3 
+	if (dogRot >= 180.0f) {
+		dogAnim = 3;
+	}
+	//se ejecuta cuando dogAnim3 llega a otra esquina y rota en direccion a la otra esquina
+	if (dogPos.z <= -4.77f) {
+		dogAnim = 0;
+		dogRot += 0.6; 
+	}
+	//una vez que esta de cara a la otra esquina se activa dogAnim4
+	if (dogRot >= 270.0f) {
+		dogAnim = 4;
+	}
+	//cuando lllega la otra esquina para y gira 
+	if (dogPos.x <= -4.69f) {
+		dogAnim = 0;
+		dogRot += 0.6;
+	}
+	//gira a 405° grados y se activa dogAnim5
+	if (dogRot >= 405.0f) {
+		dogAnim = 5;
+	}
+
+
+
+
+
 }
 void MouseCallback(GLFWwindow *window, double xPos, double yPos)
 {
