@@ -83,7 +83,7 @@ void main( )
     // Spot light
     result += CalcSpotLight( spotLight, norm, FragPos, viewDir );
  	
-    color = vec4( result,texture(material.diffuse, TexCoords).rgb );
+    color = vec4(result, 1.0); 
 	  if(color.a < 0.1 && transparency==1)
         discard;
 
@@ -92,6 +92,11 @@ void main( )
 // Calculates the color when using a directional light.
 vec3 CalcDirLight( DirLight light, vec3 normal, vec3 viewDir )
 {
+    vec3 texColor = vec3(texture(material.diffuse, TexCoords));
+if(length(texColor) < 0.1) {
+    texColor = vec3(0.8, 0.7, 0.6); // Color madera por defecto si no hay textura
+}
+
     vec3 lightDir = normalize( -light.direction );
     
     // Diffuse shading
@@ -112,6 +117,11 @@ vec3 CalcDirLight( DirLight light, vec3 normal, vec3 viewDir )
 // Calculates the color when using a point light.
 vec3 CalcPointLight( PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir )
 {
+    vec3 texColor = vec3(texture(material.diffuse, TexCoords));
+if(length(texColor) < 0.1) {
+    texColor = vec3(0.8, 0.7, 0.6); // Color madera por defecto si no hay textura
+}
+
     vec3 lightDir = normalize( light.position - fragPos );
     
     // Diffuse shading
@@ -140,7 +150,12 @@ vec3 CalcPointLight( PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir )
 // Calculates the color when using a spot light.
 vec3 CalcSpotLight( SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir )
 {
-    vec3 lightDir = normalize( light.position - fragPos );
+   vec3 texColor = vec3(texture(material.diffuse, TexCoords));
+if(length(texColor) < 0.1) {
+    texColor = vec3(0.8, 0.7, 0.6); // Color madera por defecto si no hay textura
+}
+   
+   vec3 lightDir = normalize( light.position - fragPos );
     
     // Diffuse shading
     float diff = max( dot( normal, lightDir ), 0.0 );
@@ -159,9 +174,9 @@ vec3 CalcSpotLight( SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir )
     float intensity = clamp( ( theta - light.outerCutOff ) / epsilon, 0.0, 1.0 );
     
     // Combine results
-    vec3 ambient = light.ambient * vec3( texture( material.diffuse, TexCoords ) );
-    vec3 diffuse = light.diffuse * diff * vec3( texture( material.diffuse, TexCoords ) );
-    vec3 specular = light.specular * spec * vec3( texture( material.specular, TexCoords ) );
+vec3 ambient = light.ambient * texColor;
+vec3 diffuse = light.diffuse * diff * texColor;
+vec3 specular = light.specular * spec * vec3(texture(material.specular, TexCoords));
     
     ambient *= attenuation * intensity;
     diffuse *= attenuation * intensity;

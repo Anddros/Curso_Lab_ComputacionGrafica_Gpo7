@@ -22,6 +22,12 @@ using namespace std;
 
 GLint TextureFromFile(const char *path, string directory);
 
+struct BoneInfo
+{
+	int id;
+	glm::mat4 offset;
+};
+
 class Model
 {
 public:
@@ -40,7 +46,13 @@ public:
 			this->meshes[i].Draw(shader);
 		}
 	}
+	std::map<string, BoneInfo> m_BoneInfoMap;
+	int m_BoneCounter = 0;
 
+	auto& GetBoneInfoMap() {
+		return m_BoneInfoMap;
+	}
+	int& GetBoneCount() { return m_BoneCounter; }
 private:
 	/*  Model Data  */
 	vector<Mesh> meshes;
@@ -87,82 +99,63 @@ private:
 			this->processNode(node->mChildren[i], scene);
 		}
 	}
-
-	Mesh processMesh(aiMesh *mesh, const aiScene *scene)
+	Mesh processMesh(aiMesh* mesh, const aiScene* scene)
 	{
-		// Data to fill
 		vector<Vertex> vertices;
 		vector<GLuint> indices;
 		vector<Texture> textures;
 
-		// Walk through each of the mesh's vertices
 		for (GLuint i = 0; i < mesh->mNumVertices; i++)
 		{
 			Vertex vertex;
-			glm::vec3 vector; // We declare a placeholder vector since assimp uses its own vector class that doesn't directly convert to glm's vec3 class so we transfer the data to this placeholder glm::vec3 first.
 
-							  // Positions
+			// 1. Inicializamos los datos de los huesos en -1 y 0.0f
+			SetVertexBoneDataToDefault(vertex);
+
+			glm::vec3 vector;
 			vector.x = mesh->mVertices[i].x;
 			vector.y = mesh->mVertices[i].y;
 			vector.z = mesh->mVertices[i].z;
 			vertex.Position = vector;
 
-			// Normals
 			vector.x = mesh->mNormals[i].x;
 			vector.y = mesh->mNormals[i].y;
 			vector.z = mesh->mNormals[i].z;
 			vertex.Normal = vector;
 
-			// Texture Coordinates
-			if (mesh->mTextureCoords[0]) // Does the mesh contain texture coordinates?
+			if (mesh->mTextureCoords[0])
 			{
 				glm::vec2 vec;
-				// A vertex can contain up to 8 different texture coordinates. We thus make the assumption that we won't
-				// use models where a vertex can have multiple texture coordinates so we always take the first set (0).
 				vec.x = mesh->mTextureCoords[0][i].x;
 				vec.y = mesh->mTextureCoords[0][i].y;
 				vertex.TexCoords = vec;
 			}
 			else
-			{
 				vertex.TexCoords = glm::vec2(0.0f, 0.0f);
-			}
 
 			vertices.push_back(vertex);
 		}
 
-		// Now wak through each of the mesh's faces (a face is a mesh its triangle) and retrieve the corresponding vertex indices.
 		for (GLuint i = 0; i < mesh->mNumFaces; i++)
 		{
 			aiFace face = mesh->mFaces[i];
-			// Retrieve all indices of the face and store them in the indices vector
 			for (GLuint j = 0; j < face.mNumIndices; j++)
-			{
 				indices.push_back(face.mIndices[j]);
-			}
 		}
-		
-		// Process materials
+
 		if (mesh->mMaterialIndex >= 0)
 		{
 			aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
-			// We assume a convention for sampler names in the shaders. Each diffuse texture should be named
-			// as 'texture_diffuseN' where N is a sequential number ranging from 1 to MAX_SAMPLER_NUMBER.
-			// Same applies to other texture as the following list summarizes:
-			// Diffuse: texture_diffuseN
-			// Specular: texture_specularN
-			// Normal: texture_normalN
-
-			// 1. Diffuse maps
 			vector<Texture> diffuseMaps = this->loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
 			textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
-
-			// 2. Specular maps
 			vector<Texture> specularMaps = this->loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
 			textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 		}
 
-		// Return a mesh object created from the extracted mesh data
+		// 2. ¡LA MAGIA DE LOS HUESOS! 
+		// Extraemos los pesos después de poblar los vértices
+		ExtractBoneWeightForVertices(vertices, mesh, scene);
+
 		return Mesh(vertices, indices, textures);
 	}
 
@@ -202,8 +195,72 @@ private:
 				this->textures_loaded.push_back(texture);  // Store it as texture loaded for entire model, to ensure we won't unnecesery load duplicate textures.
 			}
 		}
-
 		return textures;
+	}
+
+	void SetVertexBoneDataToDefault(Vertex& vertex)
+	{
+		for (int i = 0; i < MAX_BONE_INFLUENCE; i++)
+		{
+			vertex.m_BoneIDs[i] = -1;
+			vertex.m_Weights[i] = 0.0f;
+		}
+	}
+
+	void SetVertexBoneData(Vertex& vertex, int boneID, float weight)
+	{
+		for (int i = 0; i < MAX_BONE_INFLUENCE; ++i)
+		{
+			if (vertex.m_BoneIDs[i] < 0)
+			{
+				vertex.m_Weights[i] = weight;
+				vertex.m_BoneIDs[i] = boneID;
+				break;
+			}
+		}
+	}
+
+	void ExtractBoneWeightForVertices(vector<Vertex>& vertices, aiMesh* mesh, const aiScene* scene)
+	{
+		for (int boneIndex = 0; boneIndex < mesh->mNumBones; ++boneIndex)
+		{
+			int boneID = -1;
+			string boneName = mesh->mBones[boneIndex]->mName.C_Str();
+
+			if (m_BoneInfoMap.find(boneName) == m_BoneInfoMap.end())
+			{
+				BoneInfo newBoneInfo;
+				newBoneInfo.id = m_BoneCounter;
+				newBoneInfo.offset = AssimpMatToGLM(mesh->mBones[boneIndex]->mOffsetMatrix);
+				m_BoneInfoMap[boneName] = newBoneInfo;
+				boneID = m_BoneCounter;
+				m_BoneCounter++;
+			}
+			else
+			{
+				boneID = m_BoneInfoMap[boneName].id;
+			}
+
+			auto weights = mesh->mBones[boneIndex]->mWeights;
+			int numWeights = mesh->mBones[boneIndex]->mNumWeights;
+
+			for (int weightIndex = 0; weightIndex < numWeights; ++weightIndex)
+			{
+				int vertexId = weights[weightIndex].mVertexId;
+				float weight = weights[weightIndex].mWeight;
+				SetVertexBoneData(vertices[vertexId], boneID, weight);
+			}
+		}
+	}
+
+	inline glm::mat4 AssimpMatToGLM(const aiMatrix4x4& from)
+	{
+		glm::mat4 to;
+		to[0][0] = from.a1; to[1][0] = from.a2; to[2][0] = from.a3; to[3][0] = from.a4;
+		to[0][1] = from.b1; to[1][1] = from.b2; to[2][1] = from.b3; to[3][1] = from.b4;
+		to[0][2] = from.c1; to[1][2] = from.c2; to[2][2] = from.c3; to[3][2] = from.c4;
+		to[0][3] = from.d1; to[1][3] = from.d2; to[2][3] = from.d3; to[3][3] = from.d4;
+		return to;
 	}
 };
 

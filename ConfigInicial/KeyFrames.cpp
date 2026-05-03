@@ -1,6 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+#include "Animation.h"
+#include "Animator.h"
 
 // GLEW
 #include <GL/glew.h>
@@ -30,7 +35,7 @@
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void MouseCallback(GLFWwindow* window, double xPos, double yPos);
 void DoMovement();
-void Animation();
+void AnimacionManual();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -45,6 +50,8 @@ bool firstMouse = true;
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 bool active;
+
+bool playFBX = true;
 
 // Positions of the point lights
 glm::vec3 pointLightPositions[] = {
@@ -326,16 +333,25 @@ int main()
 
 
 	//models
-	Model DogBody((char*)"Models/DogBody.obj");
-	Model HeadDog((char*)"Models/HeadDog.obj");
-	Model DogTail((char*)"Models/TailDog.obj");
-	Model F_RightLeg((char*)"Models/F_RightLegDog.obj");
-	Model F_LeftLeg((char*)"Models/F_LeftLegDog.obj");
-	Model B_RightLeg((char*)"Models/B_RightLegDog.obj");
-	Model B_LeftLeg((char*)"Models/B_LeftLegDog.obj");
-	Model Piso((char*)"Models/piso.obj");
-	Model Ball((char*)"Models/ball.obj");
+	// 
+	// Aplica las transformaciones en Blender: Antes de exportar a FBX, selecciona tu modelo y tu esqueleto en Blender. Presiona Ctrl + A y selecciona "All Transforms" (Todas las transformaciones). Esto asegura que la escala esté en 1.0 y la rotación en 0 para evitar comportamientos extraños.
 
+	// Verifica los pesos(Weight Paint) : Asegúrate de que todos los vértices de tu malla tengan algún peso asignado a algún hueso.Si un vértice no tiene peso, su posición final será(0, 0, 0), lo que causa que la malla colapse hacia el centro(que parece ser en parte lo que está ocurriendo en tu imagen).
+	//Configuración de exportación FBX :
+
+	//En "Transform", asegúrate de que "Apply Scalings" esté en "FBX All" o "FBX Units Scale".
+
+	//	En "Geometry", marca "Apply Modifiers".
+
+	//	En "Armature", desmarca "Add Leaf Bones" (suele generar huesos extra innecesarios).
+	Model MuñecoMadera((char*)"Models/MuñecoMaderaRIGGEADO3.fbx");
+	Model Piso((char*)"Models/Piso.obj");
+
+	// 1. Instanciamos la animación asegurándonos del punto y coma al final
+	Animation animacionMuñeco("Models/MuñecoMaderaRIGGEADO3.fbx", &MuñecoMadera);
+
+	// 2. Iniciamos el animador con esa animación en una línea nueva
+	Animator animator(&animacionMuñeco);
 
 	//KeyFrames
 	for (int i = 0; i < MAX_FRAMES; i++)
@@ -385,6 +401,9 @@ int main()
 
 	glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 100.0f);
 
+
+
+
 	// Game loop
 	while (!glfwWindowShouldClose(window))
 	{
@@ -397,7 +416,13 @@ int main()
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
 		glfwPollEvents();
 		DoMovement();
-		Animation();
+		AnimacionManual();
+		
+		if (playFBX)
+		{
+			// Solo avanzamos el tiempo si la bandera es verdadera
+			animator.UpdateAnimation(deltaTime);
+		}
 
 		// Clear the colorbuffer
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -485,64 +510,29 @@ int main()
 		Piso.Draw(lightingShader);
 
 		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(dogPosX, dogPosY, dogPosZ));
+
+		// NOTA: Agregué un "-90.0f" aquí para contrarrestar que el FBX esté acostado
+		model = glm::rotate(model, glm::radians( rotDog), glm::vec3(1.0f, 0.0f, 0.0f));
+
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "transparency"), 0);
-		//Previo 12 							Calles Cedeño Andros Gael
-		//28 / 04 / 2026									320004647
-		//Body
-		modelTemp = model = glm::translate(model, glm::vec3(dogPosX, dogPosY, dogPosZ));
-		modelTemp = model = glm::rotate(model, glm::radians(rotDog), glm::vec3(1.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		DogBody.Draw(lightingShader);
-		//Head
-		model = modelTemp;
-		model = glm::translate(model, glm::vec3(0.0f, 0.093f, 0.208f));
-		model = glm::rotate(model, glm::radians(head), glm::vec3(0.0f, 0.0f, 1.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		HeadDog.Draw(lightingShader);
-		//Tail 
-		model = modelTemp;
-		model = glm::translate(model, glm::vec3(0.0f, 0.026f, -0.288f));
-		model = glm::rotate(model, glm::radians(tail), glm::vec3(0.0f, 0.0f, -1.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		DogTail.Draw(lightingShader);
-		//Front Left Leg
-		model = modelTemp;
-		model = glm::translate(model, glm::vec3(0.112f, -0.044f, 0.074f));
-		model = glm::rotate(model, glm::radians(FLegs), glm::vec3(-1.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		F_LeftLeg.Draw(lightingShader);
-		//Front Right Leg
-		model = modelTemp;
-		model = glm::translate(model, glm::vec3(-0.111f, -0.055f, 0.074f));
-		model = glm::rotate(model, glm::radians(rotDog), glm::vec3(1.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		F_RightLeg.Draw(lightingShader);
-		//Back Left Leg
-		model = modelTemp;
-		model = glm::translate(model, glm::vec3(0.082f, -0.046, -0.218));
-		model = glm::rotate(model, glm::radians(RLegs), glm::vec3(1.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		B_LeftLeg.Draw(lightingShader);
-		//Back Right Leg
-		model = modelTemp;
-		model = glm::translate(model, glm::vec3(-0.083f, -0.057f, -0.231f));
-		model = glm::rotate(model, glm::radians(RLegs), glm::vec3(1.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		B_RightLeg.Draw(lightingShader);
 
+		// --- EL CÓDIGO CRÍTICO PARA LA ANIMACIÓN ---
+		// Obtenemos las transformaciones calculadas de los huesos en ESTE frame
+		std::vector<glm::mat4> transforms = animator.GetFinalBoneMatrices();
 
-		model = glm::mat4(1);
-		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "transparency"), 1);
-		model = glm::rotate(model, glm::radians(rotBall), glm::vec3(0.0f, 1.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		Ball.Draw(lightingShader);
-		glDisable(GL_BLEND);  //Desactiva el canal alfa 
+		// Las enviamos al arreglo "finalBonesMatrices" de tu Vertex Shader
+		for (int i = 0; i < transforms.size(); ++i) {
+			std::string uniformName = "finalBonesMatrices[" + std::to_string(i) + "]";
+			GLuint transformLoc = glGetUniformLocation(lightingShader.Program, uniformName.c_str());
+			glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transforms[i]));
+		}
+		// -------------------------------------------
+
+		// 4. Finalmente, dibujamos la malla YA CON LAS MATRICES CARGADAS
+		MuñecoMadera.Draw(lightingShader);
 		glBindVertexArray(0);
-
 
 		// Also draw the lamp object, again binding the appropriate shader
 		lampShader.Use();
@@ -745,7 +735,11 @@ void DoMovement()
 // Is called whenever a key is pressed/released via GLFW
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
-	
+	if (key == GLFW_KEY_M && action == GLFW_PRESS)
+	{
+		playFBX = !playFBX; // Alterna entre true y false
+		printf("Animacion FBX: %s\n", playFBX ? "REPRODUCIENDO" : "PAUSADA");
+	}
 	//Practica 12 							Calles Cedeño Andros Gael
 	//03 / 05 / 2026									320004647
 	// Guardar con la Tecla P los frames en un txt
@@ -828,7 +822,7 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 
 
 }
-void Animation() {
+void AnimacionManual() {
 
 	//Si ejecutamos play
 	if (play)
